@@ -1,0 +1,143 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>myDocument:Document</u>" as myDocument{
+    characters = [H, e, l, l, o, W, o, r, l, d, C, S, 4, 8, 0, 0]
+    propertiesFactory
+}
+
+object "<u>CharacterPropertiesFactory</u>" as factory{
+    flyweights = {"Arial", "Black", 11, "Times New Roman", "Black", 12}
+}
+
+object "<u>CharacterProperties</u>" as defaultProperty{
+    font = "Arial"
+    color = "Black"
+    size = 11
+}
+
+object "<u>CharacterProperties</u>" as mlaProperty{
+    font = "Times New Roman"
+    color = "Black"
+    size = 12
+}
+
+object "<u>Character: char_H</u>" as char1{
+    character: "H"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_e</u>" as char2{
+    character: "e"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_l1</u>" as char3{
+    character: "l"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_l2</u>" as char4{
+    character: "l"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_o1</u>" as char5{
+    character: "o"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_W</u>" as char6{
+    character: "W"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_o2</u>" as char7{
+    character: "o"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_r</u>" as char8{
+    character: "r"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_l3</u>" as char9{
+    character: "l"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_d</u>" as char10{
+    character: "d"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_C</u>" as char11{
+    character: "C"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_S</u>" as char12{
+    character: "S"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char:4</u>" as char13{
+    character: "4"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_8</u>" as char14{
+    character: "8"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_0_1</u>" as char15{
+    character: "0"
+    characterProperty: defaultProperty
+}
+
+object "<u>Character: char_0_2</u>" as char16{
+    character: "0"
+    characterProperty: defaultProperty
+}
+
+myDocument --> factory
+myDocument o-- char1
+myDocument o-- char2
+myDocument o-- char3
+myDocument o-- char4
+myDocument o-- char5
+myDocument o-- char6
+myDocument o-- char7
+myDocument o-- char8
+myDocument o-- char9
+myDocument o-- char10
+myDocument o-- char11
+myDocument o-- char12
+myDocument o-- char13
+myDocument o-- char14
+myDocument o-- char15
+myDocument o-- char16
+
+factory --> defaultProperty
+char1 --> mlaProperty
+char2 --> defaultProperty
+char3 --> defaultProperty
+char4 --> defaultProperty
+char5 --> defaultProperty
+char6 --> mlaProperty
+char7 --> defaultProperty
+char8 --> defaultProperty
+char9 --> defaultProperty
+char10 --> defaultProperty
+char11 --> defaultProperty
+char12 --> defaultProperty
+char13 --> defaultProperty
+char14 --> defaultProperty
+char15 --> defaultProperty
+char16 --> defaultProperty
+
+factory --> mlaProperty
+
+@enduml

@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object "<u>Document: myDocument</u>" as myDocument{
+    characters = [H, e, l, l, o, W, o, r, l, d, C, S, 4, 8, 0, 0]
+    propertiesFactory
+}
+
+object "<u>CharacterPropertiesFactory: factory</u>" as factory{
+    flyweights = {"Arial", "Black", 11, "Times New Roman", "Black", 12}
+}
+
+object "<u>CharacterProperties: defaultProperty</u>" as defaultProperty{
+    font = "Arial"
+    color = "Black"
+    size = 11
+}
+
+object "<u>CharacterProperties: mlaProperty</u>" as mlaProperty{
+    font = "Times New Roman"
+    color = "Black"
+    size = 12
+}
+
+object "<u>Character: char_H</u>" as char1{
+    character: "H"
+    characterProperty: mlaProperty
+}
+
+object "<u>Character</u>: char_W" as char2{
+    character: "W"
+    characterProperty: mlaProperty
+}
+
+myDocument --> factory
+myDocument o-- char1
+myDocument o-- char2
+
+factory --> defaultProperty
+factory --> mlaProperty
+
+char1 --> mlaProperty
+char2 --> mlaProperty
+
+
+@enduml
