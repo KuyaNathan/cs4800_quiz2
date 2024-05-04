@@ -103,22 +103,22 @@ object "<u>Character: char_0_2</u>" as char16{
 }
 
 myDocument --> factory
-myDocument o-- char1
-myDocument o-- char2
-myDocument o-- char3
-myDocument o-- char4
-myDocument o-- char5
-myDocument o-- char6
-myDocument o-- char7
-myDocument o-- char8
-myDocument o-- char9
-myDocument o-- char10
-myDocument o-- char11
-myDocument o-- char12
-myDocument o-- char13
-myDocument o-- char14
-myDocument o-- char15
-myDocument o-- char16
+myDocument o-U- char1
+myDocument o-U- char2
+myDocument o-U- char3
+myDocument o-U- char4
+myDocument o-U- char5
+myDocument o-U- char6
+myDocument o-U- char7
+myDocument o-U- char8
+myDocument o-D- char9
+myDocument o-D- char10
+myDocument o-D- char11
+myDocument o-D- char12
+myDocument o-D- char13
+myDocument o-D- char14
+myDocument o-D- char15
+myDocument o-D- char16
 
 factory --> defaultProperty
 char1 --> mlaProperty
